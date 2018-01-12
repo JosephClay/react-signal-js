@@ -10,7 +10,7 @@ module.exports = function signalRoot(signal, Component) {
 		}
 
 		render() {
-			return <Component {...this.props} />;
+			return React.createElement(Component, this.props);;
 		}
 	};
 

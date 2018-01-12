@@ -34,12 +34,11 @@ module.exports = function signalBranch(Component) {
 		}
 
 		render() {
-			return (
-				<Component
-					{...this.props}
-					on={ this.onOn }
-					trigger={ this.onTrigger }
-				/>
+			return React.createElement(Component,
+				Object.assign({}, this.props, {
+					on: this.onOn,
+					trigger: this.onTrigger,
+				})
 			);
 		}
 	};
